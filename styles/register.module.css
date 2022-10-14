@@ -1,0 +1,15 @@
+.inputMain{
+    margin-bottom: 30px;
+}
+.fullheight{
+    height: 100vh;
+}
+.btn{
+    background: green !important;
+    border-radius: 30.3009px !important;
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+    color: #FFFFFF !important;
+    width: 100% !important;
+    margin:0 ;
+}
