@@ -1,6 +1,8 @@
 import styles from '../styles/register.module.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+//import DatePicker from '@mui/material/DatePicker';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Types } from '../constants/actionTypes';
@@ -87,11 +89,14 @@ const Home = (props) => {
 
 
             </Box>
+
+            
             <Box className={styles.inputMain}>
               <TextField
                 id="date"
                 label="Birthday"
                 type="date"
+                maxDate = {new Date('')}
                 fullWidth
                 error={Boolean(formik.touched.date_birth && formik.errors.date_birth)}
                 helperText={formik.touched.date_birth && formik.errors.date_birth}
@@ -102,8 +107,24 @@ const Home = (props) => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                inputProps={{
+                  max: new Date().toISOString().slice(0, 10),
+                  //max: new Date().toISOString().slice(0, 16)
+                }}
+                //type="datetime-local"
               />
+
+
             </Box>
+
+            {/* <DatePicker
+    
+    mode="landscape"
+    
+    floatingLabelText="Date"
+    
+    maxDate={new Date()}  //maxDate
+/> */}
             <Box className={styles.inputMain}>
               <TextField
                 id="outlined-basic"
